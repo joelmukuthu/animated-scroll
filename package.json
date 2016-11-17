@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "cross-env NODE_ENV=test nyc mocha",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "build": "npm run lint && npm test && grunt build"
   },
   "keywords": [
@@ -21,6 +22,7 @@
     "babel-plugin-istanbul": "^3.0.0",
     "babel-plugin-transform-es2015-modules-umd": "^6.18.0",
     "babel-preset-es2015": "^6.18.0",
+    "coveralls": "^2.11.15",
     "cross-env": "^3.1.3",
     "eslint": "^3.10.2",
     "grunt": "^1.0.1",
