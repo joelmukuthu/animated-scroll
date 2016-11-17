@@ -3,22 +3,22 @@
  * Version: 0.0.1
  * (c) 2016 Joel Mukuthu
  * MIT License
- * Built on: 17-11-2016 17:48:57 GMT+0100
+ * Built on: 17-11-2016 18:05:38 GMT+0100
  **/
 
 (function (global, factory) {
     if (typeof define === "function" && define.amd) {
-        define(['exports'], factory);
+        define(['module', 'exports'], factory);
     } else if (typeof exports !== "undefined") {
-        factory(exports);
+        factory(module, exports);
     } else {
         var mod = {
             exports: {}
         };
-        factory(mod.exports);
+        factory(mod, mod.exports);
         global.AnimatedScroll = mod.exports;
     }
-})(this, function (exports) {
+})(this, function (module, exports) {
     'use strict';
 
     Object.defineProperty(exports, "__esModule", {
@@ -279,4 +279,5 @@
     }();
 
     exports.default = AnimatedScroll;
+    module.exports = exports['default'];
 });

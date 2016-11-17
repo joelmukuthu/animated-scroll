@@ -1,5 +1,5 @@
 const expect = require('unexpected');
-const { default: AnimatedScroll } = require('../src/AnimatedScroll');
+const AnimatedScroll = require('../src/AnimatedScroll');
 
 describe('AnimatedScroll', function () {
     it('throws', function () {
