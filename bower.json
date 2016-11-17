@@ -1,0 +1,25 @@
+{
+  "name": "animated-scroll",
+  "version": "0.0.1",
+  "description": "Programmatic scrolling as an angular service",
+  "main": "dist/AnimatedScroll.js",
+  "authors": [
+    "Joel Mukuthu <joelmukuthu@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "scroll",
+    "scrolltop"
+  ],
+  "homepage": "https://github.com/joelmukuthu/animated-scroll.git",
+  "ignore": [
+    "**/.*",
+    "src",
+    "node_modules",
+    "bower_components",
+    "Gruntfile.js",
+    "CONTRIBUTING.md",
+    "test"
+  ]
+}
