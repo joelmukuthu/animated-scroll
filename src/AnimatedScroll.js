@@ -10,15 +10,19 @@ const easeInOutQuad = (time, start, change, duration) => {
 
 const validatePositiveNumber = (number, name) => {
     if (typeof number !== 'number' || isNaN(number)) {
-        throw new Error(`${name} (${number}) should be a number`);
+        throw new Error(`${name} should be a number`);
     }
     if (number < 0) {
-        throw new Error(`${name} (${number}) should be greater than zero`);
+        throw new Error(`${name} should be greater than or equal to zero`);
     }
 };
 
 export default class AnimatedScroll {
     constructor(element, options = {}) {
+        if (!element) {
+            throw new Error('provide a DOM element');
+        }
+
         if (typeof element !== 'object' || typeof element.nodeName !== 'string') {
             throw new Error('the element should be a DOM element');
         }
@@ -42,8 +46,11 @@ export default class AnimatedScroll {
         }
 
         const easing = options.easing;
-        if (typeof easing !== 'undefined' && typeof easing !== 'function') {
-            throw new Error('the easing option should be a function');
+        if (typeof easing !== 'undefined') {
+            if (typeof easing !== 'function') {
+                throw new Error('the easing option should be a function');
+            }
+            this.easing = easing;
         } else {
             this.easing = easeInOutQuad;
         }

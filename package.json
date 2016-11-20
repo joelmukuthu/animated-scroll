@@ -5,7 +5,7 @@
   "main": "dist/AnimatedScroll.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "cross-env NODE_ENV=test nyc mocha",
+    "test": "cross-env NODE_ENV=test nyc mocha -r jsdom-global/register",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "build": "npm run lint && npm test && grunt build"
   },
@@ -30,12 +30,12 @@
     "grunt-babel": "^6.0.0",
     "grunt-banner": "^0.6.0",
     "grunt-contrib-clean": "^1.0.0",
-    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-uglify": "^1.0.2",
     "grunt-release-it": "^1.0.1",
     "jsdom": "^9.8.3",
+    "jsdom-global": "^2.1.0",
     "load-grunt-tasks": "^3.5.0",
-    "mocha": "^3.0.0",
-    "mocha-jsdom": "^1.1.0",
+    "mocha": "^3.1.2",
     "nyc": "^9.0.1",
     "unexpected": "^10.13.3"
   },
