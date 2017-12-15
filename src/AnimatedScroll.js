@@ -61,7 +61,7 @@ export default class AnimatedScroll {
             validatePositiveNumber(offset, direction);
 
             if (duration !== false) {
-                return validatePositiveNumber(duration, 'duration');
+                validatePositiveNumber(duration, 'duration');
             }
             if (typeof easing !== 'function') {
                 throw new Error('easing should be a function');
@@ -92,7 +92,8 @@ export default class AnimatedScroll {
             const change = offset - start;
             const timeIncrement = this.timeIncrement;
 
-            duration = parseInt(duration);
+            duration = parseInt(duration, 10); // you want to use radix 10
+            // so you get a decimal number even with a leading 0 and an old browser ([IE8, Firefox 20, Chrome 22 and older][1])
 
             let currentTime = 0;
             const animate = () => {
@@ -118,6 +119,7 @@ export default class AnimatedScroll {
                     resolve(this.element[elementProperty]);
                 }
             };
+            animate();
         });
     }
 
