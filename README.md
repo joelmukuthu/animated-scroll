@@ -1,4 +1,6 @@
 # animated-scroll
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/joelmukuthu/animated-scroll.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/joelmukuthu/animated-scroll.svg?branch=master)](https://travis-ci.org/joelmukuthu/animated-scroll) [![Licence](https://img.shields.io/npm/l/animated-scroll.svg)](https://github.com/joelmukuthu/animated-scroll/blob/master/LICENSE.md) [![Coverage Status](https://coveralls.io/repos/github/joelmukuthu/animated-scroll/badge.svg?branch=master)](https://coveralls.io/github/joelmukuthu/animated-scroll?branch=master) [![Bower version](https://img.shields.io/bower/v/animated-scroll.svg)](https://github.com/joelmukuthu/animated-scroll) [![npm version](https://img.shields.io/npm/v/animated-scroll.svg)](https://www.npmjs.com/package/animated-scroll)
 
 Allows animating `scrollTop` and/or `scrollLeft` of an HTML element. Uses
