@@ -35,7 +35,7 @@
     "jsdom": "^10.1.0",
     "jsdom-global": "^3.0.2",
     "load-grunt-tasks": "^3.5.0",
-    "mocha": "^4.1.0",
+    "mocha": "^5.0.0",
     "nyc": "^11.4.1",
     "unexpected": "^10.13.3"
   },
