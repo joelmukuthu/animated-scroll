@@ -30,7 +30,7 @@
     "grunt-babel": "^6.0.0",
     "grunt-banner": "^0.6.0",
     "grunt-contrib-clean": "^2.0.0",
-    "grunt-contrib-uglify": "^3.0.0",
+    "grunt-contrib-uglify": "^4.0.0",
     "grunt-release-it": "^1.0.1",
     "jsdom": "^13.0.0",
     "jsdom-global": "^3.0.2",
