@@ -34,7 +34,7 @@
     "grunt-release-it": "^1.0.1",
     "jsdom": "^13.0.0",
     "jsdom-global": "^3.0.2",
-    "load-grunt-tasks": "^4.0.0",
+    "load-grunt-tasks": "^5.1.0",
     "mocha": "^6.0.0",
     "nyc": "^14.0.0",
     "unexpected": "^11.0.1"
