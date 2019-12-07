@@ -1,9 +1,9 @@
 /**
  * animated-scroll
- * Version: 0.0.2
+ * Version: 0.0.3
  * (c) 2019 Joel Mukuthu
  * MIT License
- * Built on: 07-12-2019 12:49:33 GMT+0100
+ * Built on: 07-12-2019 12:54:04 GMT+0100
  **/
 
 (function (global, factory) {

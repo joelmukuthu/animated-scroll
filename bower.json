@@ -1,6 +1,6 @@
 {
   "name": "animated-scroll",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Programmatic scrolling as an angular service",
   "main": "dist/AnimatedScroll.js",
   "authors": [
