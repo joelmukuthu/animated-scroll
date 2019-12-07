@@ -76,7 +76,7 @@ export default class AnimatedScroll {
                 this.stopTop();
             } else {
                 elementProperty = 'scrollLeft';
-                animationProperty = 'topAnimation';
+                animationProperty = 'leftAnimation';
 
                 this.stopLeft();
             }
