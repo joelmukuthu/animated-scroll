@@ -5,8 +5,7 @@
 
 Allows animating `scrollTop` and/or `scrollLeft` of an HTML element. Uses
 `requestAnimationFrame` to provide smooth animations and returns a `Promise` to
-notify when the animation is completed. To ensure compatibility with older
-browsers, add polyfills for `requestAnimationFrame` and `Promise` as needed.
+notify when the animation is completed.
 
 ### Installation
 Install with bower:
@@ -26,11 +25,11 @@ The pre-built files can be found in the `dist/` directory.
 wrapper so you can access it as:
 
 ```javascript
-var AnimatedScroll = require('dist/AnimatedScroll.min.js');
+var AnimatedScroll = require('animated-scroll');
 // or
-import AnimatedScroll from 'dist/AnimatedScroll.min.js';
+import AnimatedScroll from 'animated-scroll';
 // or
-define([ 'dist/AnimatedScroll.min.js' ], function (AnimatedScroll) {});
+define([ 'path/to/animated-scroll' ], function (AnimatedScroll) {});
 // or
 var AnimatedScroll = window.AnimatedScroll;
 ```
@@ -50,10 +49,7 @@ scroll.left(100).then(function (newLeft) {
     console.log('#myElement\'s scrollLeft is now', newLeft);
 });
 
-scroll.to({
-    left: 100,
-    top: 100
-}).then(function (coords) {
+scroll.to({ left: 100, top: 100 }).then(function (coords) {
     console.log('#myElement\'s scrollTop is now', coords.top);
     console.log('#myElement\'s scrollLeft is now', coords.left);
 });
