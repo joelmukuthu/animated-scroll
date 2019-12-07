@@ -1,9 +1,9 @@
 /**
  * animated-scroll
- * Version: 0.0.1
- * (c) 2016 Joel Mukuthu
+ * Version: 0.0.2
+ * (c) 2019 Joel Mukuthu
  * MIT License
- * Built on: 17-11-2016 18:05:38 GMT+0100
+ * Built on: 07-12-2019 12:49:33 GMT+0100
  **/
 
 (function (global, factory) {
@@ -105,10 +105,10 @@
 
     var validatePositiveNumber = function validatePositiveNumber(number, name) {
         if (typeof number !== 'number' || isNaN(number)) {
-            throw new Error(name + ' (' + number + ') should be a number');
+            throw new Error(name + ' should be a number');
         }
         if (number < 0) {
-            throw new Error(name + ' (' + number + ') should be greater than zero');
+            throw new Error(name + ' should be greater than or equal to zero');
         }
     };
 
@@ -117,6 +117,10 @@
             var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
             _classCallCheck(this, AnimatedScroll);
+
+            if (!element) {
+                throw new Error('provide a DOM element');
+            }
 
             if ((typeof element === 'undefined' ? 'undefined' : _typeof(element)) !== 'object' || typeof element.nodeName !== 'string') {
                 throw new Error('the element should be a DOM element');
@@ -141,8 +145,11 @@
             }
 
             var easing = options.easing;
-            if (typeof easing !== 'undefined' && typeof easing !== 'function') {
-                throw new Error('the easing option should be a function');
+            if (typeof easing !== 'undefined') {
+                if (typeof easing !== 'function') {
+                    throw new Error('the easing option should be a function');
+                }
+                this.easing = easing;
             } else {
                 this.easing = easeInOutQuad;
             }
@@ -160,7 +167,7 @@
                     validatePositiveNumber(offset, direction);
 
                     if (duration !== false) {
-                        return validatePositiveNumber(duration, 'duration');
+                        validatePositiveNumber(duration, 'duration');
                     }
                     if (typeof easing !== 'function') {
                         throw new Error('easing should be a function');
@@ -175,7 +182,7 @@
                         _this.stopTop();
                     } else {
                         elementProperty = 'scrollLeft';
-                        animationProperty = 'topAnimation';
+                        animationProperty = 'leftAnimation';
 
                         _this.stopLeft();
                     }
@@ -191,7 +198,8 @@
                     var change = offset - start;
                     var timeIncrement = _this.timeIncrement;
 
-                    duration = parseInt(duration);
+                    duration = parseInt(duration, 10); // you want to use radix 10
+                    // so you get a decimal number even with a leading 0 and an old browser ([IE8, Firefox 20, Chrome 22 and older][1])
 
                     var currentTime = 0;
                     var animate = function animate() {
@@ -214,6 +222,7 @@
                             resolve(_this.element[elementProperty]);
                         }
                     };
+                    animate();
                 });
             }
         }, {
