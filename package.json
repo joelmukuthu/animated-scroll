@@ -37,7 +37,7 @@
     "load-grunt-tasks": "^4.0.0",
     "mocha": "^6.0.0",
     "nyc": "^14.0.0",
-    "unexpected": "^11.0.1"
+    "unexpected": "^11.12.1"
   },
   "babel": {
     "presets": [
